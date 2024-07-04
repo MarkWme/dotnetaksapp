@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weatherapi
+  namespace: weatherapi
+  labels:
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app: weatherapi
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
